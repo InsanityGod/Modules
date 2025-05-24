@@ -1,0 +1,93 @@
+{
+  "code": "module",
+  "Behaviors": [
+    {
+      "name": "modules:Module"
+    }
+  ],
+  "shape": { "base": "item/module" },
+  "maxstacksize": 32,
+  "CreativeInventoryStacks": [
+    {
+      "tabs": [ "general" ], //TODO own tab
+      "Stacks": [//TODO move these to a patch based on config
+        {
+          "type": "item",
+          "code": "modules:module",
+          "attributes": {
+            "module": "modules:AdditionalStorageModule"
+          }
+        },
+        {
+          "type": "item",
+          "code": "modules:module",
+          "attributes": {
+            "module": "modules:TransitionSpeedMutatorModule"
+          }
+        },
+        {
+          "type": "item",
+          "code": "modules:module",
+          "attributes": {
+            "module": "modules:EngineModule"
+          }
+        }
+      ]
+    }
+  ],
+  "materialDensity": 600,
+  "guiTransform": {
+    "translation": {
+      "x": 1,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.11,
+      "z": 0.5
+    },
+    "scale": 1.41
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 180,
+      "y": 33,
+      "z": -180
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.5
+    },
+    "scale": 3.0
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -0.05,
+      "y": 0,
+      "z": -0.15
+    },
+    "rotation": {
+      "x": -90,
+      "y": 0,
+      "z": 1
+    },
+    "origin": {
+      "x": 0.16,
+      "y": 0.05,
+      "z": 0.08
+    },
+    "scale": 0.44
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "code",
+  "modid": "modules",
+  "name": "Modules",
+  "authors": [
+    "TheInsanityGod"
+  ],
+  "description": "To be added", //TODO description
+  "version": "1.0.0",
+  "dependencies": {
+    "game": "",
+    "insanitylib": "1.0.2"
+  }
+}

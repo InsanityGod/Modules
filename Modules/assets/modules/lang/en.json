@@ -1,0 +1,20 @@
+{
+  "invalid-target": "Module cannot be applied to this",
+  "invalid-module": "Module is not valid",
+  "already-applied": "Module is already applied to this",
+  "apply": "Apply",
+
+  "item-module": "Module",
+  "itemdesc-module": "A mysteries module that applies special effects to whatever it is used on",
+
+  "module-additionalstoragemodule": "Additional Storage",
+  "module-additionalstoragemodule-effect-additionalslotcount": "+{0} slots",
+
+  "module-transitionspeedmutatormodule": "Transition Speed Mutator",
+  "module-transitionspeedmutatormodule-effect-transitiontype": "Target: {0}",
+  "module-transitionspeedmutatormodule-effect-transitionmodifier": "Multiplier: {0:0.##}x",
+
+  "module-enginemodule": "Engine",
+  "module-enginemodule-effect-torquefactor": "Torque Factor: {0}",
+  "module-enginemodule-effect-targetspeed": "Target Speed: {0}"
+}
