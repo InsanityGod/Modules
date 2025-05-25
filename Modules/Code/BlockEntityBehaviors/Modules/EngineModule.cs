@@ -13,10 +13,11 @@ namespace Modules.Code.BlockEntityBehaviors.Modules
     public class EngineModule : BlockEntityModuleBase, IBlockEntityBehaviorModule, IPermanentBehavior //TODO remove unnecesary interfaces
     {
         public EngineModuleProps Props { get; private set; }
+
         public EngineModule(BlockEntity blockentity) : base(blockentity)
         {
         }
-        
+
         public override void Initialize(ICoreAPI api, JsonObject properties) //TODO see about clearing properties
         {
             base.Initialize(api, properties);
@@ -26,20 +27,20 @@ namespace Modules.Code.BlockEntityBehaviors.Modules
 
         public void UpdateNetwork() //TODO do this in while rebuilding network instead :P
         {
-            if(Api?.Side != EnumAppSide.Server) return;
+            if (Api?.Side != EnumAppSide.Server) return;
 
             var consumer = Blockentity.GetBehavior<BEBehaviorMPBase>();
-            if(consumer.Network == null)
+            if (consumer.Network == null)
             {
                 var network = Api.ModLoader.GetModSystem<MechanicalPowerMod>().CreateNetwork(consumer);
                 consumer.JoinNetwork(network);
-                if(Block is BlockMPBase mechanicalBlock)
+                if (Block is BlockMPBase mechanicalBlock)
                 {
-                    foreach(var facing in BlockFacing.ALLFACES)
+                    foreach (var facing in BlockFacing.ALLFACES)
                     {
-                        if(mechanicalBlock.HasMechPowerConnectorAt(Api.World, Pos, facing))
+                        if (mechanicalBlock.HasMechPowerConnectorAt(Api.World, Pos, facing))
                         {
-                            consumer.CreateJoinAndDiscoverNetwork(facing); 
+                            consumer.CreateJoinAndDiscoverNetwork(facing);
                         }
                     }
                 }
@@ -62,14 +63,14 @@ namespace Modules.Code.BlockEntityBehaviors.Modules
             float csFloat = (float)capableSpeed;
             float absSpeed = Math.Abs(speed);
             float excessSpeed = absSpeed - csFloat;
-            
-            if(excessSpeed > 0f)
+
+            if (excessSpeed > 0f)
             {
                 resistance += 0.1f * Math.Min(1.2f, 1 + excessSpeed * excessSpeed * 80f);
             }
-			
+
             float power = csFloat - absSpeed;
-			return Math.Max(0f, power) * Props.TorqueFactor;
+            return Math.Max(0f, power) * Props.TorqueFactor;
         }
 
         public static bool IsApplicableTo(BlockEntity blockEntity) => blockEntity.GetBehavior<BEBehaviorMPBase>() != null;

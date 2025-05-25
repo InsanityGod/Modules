@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Vintagestory.API.MathTools;
+﻿using Vintagestory.API.MathTools;
 
 namespace Modules.Config.ModuleConfigs
 {
     public class TransitionSpeedMutatorModuleConfig : ModuleConfigBase
     {
-
         /// <summary>
         /// This decides the modifier if the module reduces the speed
         /// </summary>

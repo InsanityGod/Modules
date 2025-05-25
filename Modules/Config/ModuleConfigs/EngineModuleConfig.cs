@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Vintagestory.API.MathTools;
+﻿using Vintagestory.API.MathTools;
 
 namespace Modules.Config.ModuleConfigs
 {
     public class EngineModuleConfig : ModuleConfigBase
     {
-
         public NatFloat TorqueFactor { get; set; } = new NatFloat(1, 1, EnumDistribution.GAUSSIAN)
         {
             offset = 0.5f

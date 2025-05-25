@@ -6,6 +6,7 @@ using Vintagestory.API.Common;
 
 [assembly: AutoRegistry("modules")]
 [assembly: AutoPatcher("modules")]
+
 namespace Modules.Code
 {
     public class ModulesModSystem : ModSystem

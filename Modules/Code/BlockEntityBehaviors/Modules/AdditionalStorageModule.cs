@@ -1,14 +1,10 @@
 ﻿using HarmonyLib;
 using InsanityLib.Interfaces;
-using InsanityLib.Util;
 using Modules.Code.Interfaces.Modules;
 using Modules.Config;
 using Modules.Config.Props;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.Util;
@@ -18,8 +14,8 @@ namespace Modules.Code.BlockEntityBehaviors.Modules
 {
     public class AdditionalStorageModule : BlockEntityModuleBase, IBlockEntityBehaviorModule, IPermanentBehavior
     {
-        public AdditionalStorageModuleProps Props { get; private set;}
-        
+        public AdditionalStorageModuleProps Props { get; private set; }
+
         public AdditionalStorageModule(BlockEntity blockentity) : base(blockentity)
         {
         }
@@ -32,11 +28,11 @@ namespace Modules.Code.BlockEntityBehaviors.Modules
 
         public void OnRuntimeAdded()
         {
-            if(Api.Side != EnumAppSide.Server || Props.AdditionalSlotCount <= 0) return;
+            if (Api.Side != EnumAppSide.Server || Props.AdditionalSlotCount <= 0) return;
 
             try
             {
-                var blockEntityContainer = Blockentity as BlockEntityContainer; 
+                var blockEntityContainer = Blockentity as BlockEntityContainer;
                 var traverse = Traverse.Create(blockEntityContainer.Inventory);
 
                 var slotsTraverse = traverse.Field("slots");
@@ -55,7 +51,7 @@ namespace Modules.Code.BlockEntityBehaviors.Modules
 
         //TODO allow for runtime removal
         //public void OnRuntimeRemoved()
-        
+
         public static bool IsApplicableTo(BlockEntity blockEntity) => blockEntity is BlockEntityContainer;
 
         public static void RandomizeAttributes(ITreeAttribute attributes)
