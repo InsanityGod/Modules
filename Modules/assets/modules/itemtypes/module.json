@@ -6,7 +6,7 @@
     }
   ],
   "shape": { "base": "item/module" },
-  "maxstacksize": 32,
+  "maxstacksize": 1,
   "CreativeInventoryStacks": [
     {
       "tabs": [ "general" ], //TODO own tab

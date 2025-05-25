@@ -13,7 +13,7 @@ namespace Modules.Code.HarmonyPatches
         [HarmonyPrefix]
         public static void AutoIncreaseSize(InventoryBase __instance, ITreeAttribute tree, ref ItemSlot[] slots)
         {
-            if (slots == null) return;
+            if (slots == null || tree == null) return;
 
             var slotCount = tree.GetInt("qslots", 0);
             if (slots.Length >= slotCount) return;
