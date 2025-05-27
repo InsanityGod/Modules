@@ -16,5 +16,8 @@
 
   "module-enginemodule": "Engine",
   "module-enginemodule-effect-torquefactor": "Torque Factor: {0}",
-  "module-enginemodule-effect-targetspeed": "Target Speed: {0}"
+  "module-enginemodule-effect-targetspeed": "Target Speed: {0}",
+
+  "module-vacuummodule": "Vacuum",
+  "module-vacuummodule-effect-range": "Range: {0}"
 }

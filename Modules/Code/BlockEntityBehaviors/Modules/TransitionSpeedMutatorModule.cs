@@ -28,10 +28,7 @@ namespace Modules.Code.BlockEntityBehaviors.Modules
 
         private float ModifyTransitionSpeed(EnumTransitionType transType, ItemStack stack, float mulByConfig) => transType == Props.TransitionType ? Props.TransitionModifier : 1;
 
-        public void OnRuntimeRemoved()
-        {
-            (Blockentity as BlockEntityContainer).Inventory.OnAcquireTransitionSpeed -= ModifyTransitionSpeed;
-        }
+        public void OnRuntimeRemoved() => (Blockentity as BlockEntityContainer).Inventory.OnAcquireTransitionSpeed -= ModifyTransitionSpeed;
 
         public static bool IsApplicableTo(BlockEntity blockEntity) => blockEntity is BlockEntityContainer;
 

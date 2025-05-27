@@ -31,6 +31,13 @@
           "attributes": {
             "module": "modules:EngineModule"
           }
+        },
+        {
+          "type": "item",
+          "code": "modules:module",
+          "attributes": {
+            "module": "modules:VacuumModule"
+          }
         }
       ]
     }

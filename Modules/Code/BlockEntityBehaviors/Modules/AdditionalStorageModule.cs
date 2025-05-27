@@ -32,26 +32,18 @@ namespace Modules.Code.BlockEntityBehaviors.Modules
         {
             if (Api.Side != EnumAppSide.Server || Props.AdditionalSlotCount <= 0) return;
 
-            try
-            {
-                var blockEntityContainer = Blockentity as BlockEntityContainer;
-                var traverse = Traverse.Create(blockEntityContainer.Inventory);
+            var blockEntityContainer = Blockentity as BlockEntityContainer;
+            var traverse = Traverse.Create(blockEntityContainer.Inventory);
 
-                var slotsTraverse = traverse.Field("slots");
-                if (!slotsTraverse.IsField) slotsTraverse = traverse.Property("slots");
+            var slotsTraverse = traverse.Field("slots");
+            if (!slotsTraverse.IsField) slotsTraverse = traverse.Property("slots");
 
-                var slots = slotsTraverse.GetValue<ItemSlot[]>();
-                if (slots == null) return;
+            var slots = slotsTraverse.GetValue<ItemSlot[]>();
+            if (slots == null) return;
 
-                slotsTraverse.SetValue(slots.Append(blockEntityContainer.Inventory.GenEmptySlots(Props.AdditionalSlotCount)));
-            }
-            catch
-            {
-                //TODO logging
-            }
+            slotsTraverse.SetValue(slots.Append(blockEntityContainer.Inventory.GenEmptySlots(Props.AdditionalSlotCount)));
         }
 
-        //TODO allow for runtime removal
         public void OnRuntimeRemoved()
         {
             if(Props.AdditionalSlotCount <= 0) return;
@@ -85,6 +77,7 @@ namespace Modules.Code.BlockEntityBehaviors.Modules
             blockEntity is BlockEntityContainer
             && blockEntity is not BlockEntityItemFlow //No chutes and the like
             && blockEntity.GetBehavior<IMechanicalPowerNode>() == null; //No mechanical devices like querns
+        //TODO check ground storage
 
         public static void RandomizeAttributes(ITreeAttribute attributes)
         {

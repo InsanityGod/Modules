@@ -16,6 +16,7 @@ namespace Modules.Code
             {nameof(AdditionalStorageModule), typeof(AdditionalStorageModule)},
             {nameof(TransitionSpeedMutatorModule), typeof(TransitionSpeedMutatorModule)},
             {nameof(EngineModule), typeof(EngineModule)},
+            {nameof(VacuumModule), typeof(VacuumModule)},
         }; //TODO
     }
 }

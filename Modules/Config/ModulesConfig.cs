@@ -22,5 +22,10 @@ namespace Modules.Config
         /// The configuration for the Engine Module
         /// </summary>
         public EngineModuleConfig Engine { get; set; } = new();
+
+        /// <summary>
+        /// The configuration for the Vacuum Module
+        /// </summary>
+        public VacuumModuleConfig Vacuum { get; set; } = new();
     }
 }
